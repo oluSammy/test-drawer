@@ -56,7 +56,7 @@ const BaseDrawer = ({ title, content, onClose }: DrawerProps) => {
     //     <div className="text-center">{title}</div>
     //   </Drawer.Title>
     // </div>
-    <div className="relative mt-10 p-2 z-80 noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
+    <div className="relative mt-10 p-2 z-80 h-fit max-h-[97%] noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
       {content}
     </div>
     // <>
