@@ -35,7 +35,30 @@ const DrawerDemo = ({
             content={content}
             nestedDrawer={nestedDrawer}
           /> */}
-          {content}
+          {/* {content} */}
+          <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
+            {title ? (
+              <Drawer.Title className={titleClassNames}>
+                <button
+                  aria-hidden
+                  className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
+                  onClick={onClose}
+                />
+                <div className="text-center">{title}</div>
+              </Drawer.Title>
+            ) : (
+              <div className={titleClassNames}>
+                <div
+                  aria-hidden
+                  className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
+                />
+                <VisuallyHidden asChild>
+                  <Drawer.Title>{title}</Drawer.Title>
+                </VisuallyHidden>
+              </div>
+            )}
+            <div className="relative mt-10 p-2">{content}</div>
+          </div>
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
