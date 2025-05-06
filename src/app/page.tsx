@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import VaulDrawer from "@/components/Drawer";
+import TVaulDrawer from "@/components/TDrawer";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -96,6 +97,8 @@ export default function Home() {
         isOpen={open}
         onClose={() => setOpen(false)}
       />
+      ------
+      <TVaulDrawer />
     </div>
   );
 }
