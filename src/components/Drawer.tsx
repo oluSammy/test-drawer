@@ -1,41 +1,93 @@
-"use client";
-
+import { ReactNode } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faClose } from "@fortawesome/sharp-solid-svg-icons";
+// import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Drawer } from "vaul";
 
-export default function VaulDrawer() {
+interface DrawerBaseProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string | ReactNode;
+  content: ReactNode;
+}
+
+interface DrawerProps extends DrawerBaseProps {
+  nestedDrawer?: DrawerBaseProps[];
+}
+const titleClassNames =
+  "border-b-gray-60 flex flex-col z-40 items-center text-gray-10 fixed px-2 top-0 border-b-[0.5px] w-full bg-gray-100 pt-1 rounded-t-lg pb-1 text-base font-medium mb-4";
+
+const DrawerDemo = ({
+  isOpen,
+  onClose,
+  title,
+  content,
+  nestedDrawer,
+}: DrawerProps) => {
   return (
-    <Drawer.Root>
-      <Drawer.Trigger>Open Drawer</Drawer.Trigger>
+    <Drawer.Root open={isOpen} onOpenChange={onClose}>
+      <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-60 bg-[rgba(9,9,10,0.75)]" />
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content className="bg-gray-100 h-fit fixed bottom-0 left-0 right-0 outline-none">
-          <div className="p-4 bg-white text-black">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque aut
-            unde modi accusantium deserunt quisquam dolores cumque aspernatur
-            repudiandae voluptates quibusdam commodi animi itaque rem soluta
-            laborum necessitatibus, accusamus perferendis omnis, harum nesciunt
-            fugit? Deserunt distinctio vitae molestiae, pariatur, reiciendis
-            praesentium assumenda quas libero aut maxime quasi! Deleniti nostrum
-            explicabo numquam odit, est sint. Modi rem pariatur, non, excepturi
-            sit nihil quisquam in ipsa unde magnam aspernatur aliquam eius harum
-            sed sunt tempora illo totam quidem aperiam quis tenetur quam, ad
-            corporis repellat? In omnis, officia soluta labore repudiandae
-            assumenda minus ducimus, tempore id incidunt dolorum. Nemo totam
-            nisi velit vel a? Maxime reiciendis optio rerum libero voluptatibus
-            eos amet facere, nam nostrum et illum nisi beatae eum. Quam nemo
-            porro repellendus dolorem magni accusamus tempore, adipisci fugit,
-            ipsa commodi dicta! Magnam laboriosam repudiandae totam. Nihil,
-            impedit? Blanditiis minima nisi vel provident in cumque, ratione
-            facere perspiciatis officiis aut deleniti dolores recusandae ullam
-            suscipit soluta ipsam fugit veritatis et neque vero minus amet!
-            Dignissimos ratione dicta quasi porro nesciunt iusto placeat ipsa
-            quisquam voluptatem, at modi minus neque iste quia sapiente magnam
-            odio natus voluptas assumenda praesentium quam tempora aperiam
-            officiis numquam. Maiores quam labore, atque sapiente eum blanditiis
-            praesentium.
-          </div>
+        <Drawer.Content className="border-gray-60 fixed right-0 bottom-0 left-0 z-70 flex h-fit max-h-[97%] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
+          <BaseDrawer
+            isOpen={isOpen}
+            onClose={onClose}
+            title={title}
+            content={content}
+            nestedDrawer={nestedDrawer}
+          />
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
   );
-}
+};
+
+const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
+  return (
+    <>
+      <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
+        <Drawer.Title className={titleClassNames}>
+          <button
+            aria-hidden
+            className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
+            onClick={onClose}
+          />
+          <div className="text-center">{title}</div>
+        </Drawer.Title>
+        <div className="relative mt-10 p-2">{content}</div>
+      </div>
+
+      {nestedDrawer?.map((nested) => (
+        <Drawer.NestedRoot
+          key={nested.title?.toString()}
+          open={nested.isOpen}
+          onOpenChange={nested.onClose}
+        >
+          <Drawer.Portal>
+            <Drawer.Content className="border-gray-60 fixed right-0 bottom-0 left-0 z-70 flex h-fit max-h-[97%] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
+              <Drawer.Title className={titleClassNames}>
+                <div
+                  aria-hidden
+                  onClick={nested.onClose}
+                  className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
+                />
+                <div className="text-center">{nested.title}</div>
+              </Drawer.Title>
+              <div className="relative mt-10 p-2">{nested.content}</div>
+            </Drawer.Content>
+          </Drawer.Portal>
+        </Drawer.NestedRoot>
+      ))}
+    </>
+  );
+};
+
+// const DrawerCloseButton = ({ onClose }: { onClose: () => void }) => {
+//   return (
+//     <button onClick={onClose} className="hover:bg-gray-80 h-8 w-8 rounded-full">
+//       <FontAwesomeIcon icon={faClose} className="text-gray-10" />
+//     </button>
+//   );
+// };
+
+export default DrawerDemo;
