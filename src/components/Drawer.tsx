@@ -26,7 +26,8 @@ const DrawerDemo = ({
   nestedDrawer,
 }: DrawerProps) => {
   return (
-    <Drawer.Root open={isOpen}>
+    <Drawer.Root>
+      <Drawer.Trigger>Open Drawer</Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-10 bg-[rgba(9,9,10,0.75)]" />
         <Drawer.Content className="bg-gray-100 h-fit fixed bottom-0 z-50 left-0 right-0 outline-none">
