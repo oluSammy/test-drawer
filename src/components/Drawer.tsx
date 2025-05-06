@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReactNode } from "react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Drawer } from "vaul";
@@ -27,13 +28,14 @@ const DrawerDemo = ({
       <Drawer.Portal>
         <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-60 bg-[rgba(9,9,10,0.75)]" />
         <Drawer.Content className="border-gray-60 fixed right-0 bottom-0 left-0 z-70 flex h-fit max-h-[97%] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
-          <BaseDrawer
+          {/* <BaseDrawer
             isOpen={isOpen}
             onClose={onClose}
             title={title}
             content={content}
             nestedDrawer={nestedDrawer}
-          />
+          /> */}
+          {content}
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
