@@ -6,11 +6,11 @@ import VaulDrawer from "@/components/Drawer";
 import TVaulDrawer from "@/components/TDrawer";
 
 export default function Home() {
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
-      {/* <button onClick={() => setOpen(true)}>Trigerrr</button>
+      <button onClick={() => setOpen(true)}>Trigerrr</button>
       <VaulDrawer
         content={
           <p className="text-black">
@@ -97,9 +97,9 @@ export default function Home() {
         title="Test Drawer"
         isOpen={open}
         onClose={() => setOpen(false)}
-      /> */}
+      />
       ------
-      <TVaulDrawer />
+      {/* <TVaulDrawer /> */}
     </div>
   );
 }
