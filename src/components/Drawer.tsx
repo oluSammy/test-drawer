@@ -59,7 +59,7 @@ const BaseDrawer = ({ title, content, onClose }: DrawerProps) => {
     //   {content}
     // </div>
     // <>
-    <Drawer.Content className="border-gray-60 fixed right-0 bottom-0 left-0 z-60 flex h-fit max-h-[97vh] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
+    <Drawer.Content className="border-gray-60 fixed p-4 overflow-y-auto right-0 bottom-0 left-0 z-60 flex h-fit max-h-[97vh] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
       {content}
     </Drawer.Content>
 
