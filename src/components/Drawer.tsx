@@ -42,7 +42,7 @@ const DrawerDemo = ({
   );
 };
 
-const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
+const BaseDrawer = ({ title, content, onClose }: DrawerProps) => {
   return (
     <>
       <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
@@ -57,7 +57,7 @@ const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
         <div className="relative mt-10 p-2 z-80">{content}</div>
       </div>
 
-      {nestedDrawer?.map((nested) => (
+      {/* {nestedDrawer?.map((nested) => (
         <Drawer.NestedRoot
           key={nested.title?.toString()}
           open={nested.isOpen}
@@ -77,7 +77,7 @@ const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
             </Drawer.Content>
           </Drawer.Portal>
         </Drawer.NestedRoot>
-      ))}
+      ))} */}
     </>
   );
 };
