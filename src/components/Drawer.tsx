@@ -36,7 +36,7 @@ const DrawerDemo = ({
             nestedDrawer={nestedDrawer}
           /> */}
           {/* {content} */}
-          <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
+          <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px] z-80">
             {title ? (
               <Drawer.Title className={titleClassNames}>
                 <button
