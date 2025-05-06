@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReactNode } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faClose } from "@fortawesome/sharp-solid-svg-icons";
@@ -45,17 +46,17 @@ const DrawerDemo = ({
 
 const BaseDrawer = ({ title, content, onClose }: DrawerProps) => {
   return (
-    <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
-      <Drawer.Title className={titleClassNames}>
-        <button
-          aria-hidden
-          className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
-          onClick={onClose}
-        />
-        <div className="text-center">{title}</div>
-      </Drawer.Title>
-      <div className="relative mt-10 p-2 z-80">{content}</div>
-    </div>
+    // <div className="noScrollbar flex-1 overflow-y-auto rounded-t-[10px]">
+    //   <Drawer.Title className={titleClassNames}>
+    //     <button
+    //       aria-hidden
+    //       className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
+    //       onClick={onClose}
+    //     />
+    //     <div className="text-center">{title}</div>
+    //   </Drawer.Title>
+    // </div>
+    <div className="relative mt-10 p-2 z-80">{content}</div>
     // <>
 
     //   {nestedDrawer?.map((nested) => (
