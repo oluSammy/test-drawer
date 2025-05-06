@@ -32,6 +32,7 @@ const DrawerDemo = ({
         <Drawer.Content className="bg-gray-100 h-fit fixed bottom-0 z-50 left-0 right-0 outline-none">
           <div className="p-4 bg-white h-[50vh] overflow-y-auto ">
             {content}
+            ....
           </div>
         </Drawer.Content>
 
