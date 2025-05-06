@@ -54,7 +54,7 @@ const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
           />
           <div className="text-center">{title}</div>
         </Drawer.Title>
-        <div className="relative mt-10 p-2">{content}</div>
+        <div className="relative mt-10 p-2 z-80">{content}</div>
       </div>
 
       {nestedDrawer?.map((nested) => (
