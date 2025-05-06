@@ -57,7 +57,7 @@ const DrawerDemo = ({
                 </VisuallyHidden>
               </div>
             )}
-            <div className="relative mt-10 p-2">{content}</div>
+            <div className="relative mt-10 p-2 z-80">{content}</div>
           </div>
         </Drawer.Content>
       </Drawer.Portal>
