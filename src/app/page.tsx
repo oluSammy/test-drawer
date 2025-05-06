@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useState } from "react";
 
@@ -5,11 +6,11 @@ import VaulDrawer from "@/components/Drawer";
 import TVaulDrawer from "@/components/TDrawer";
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   return (
     <div>
-      <button onClick={() => setOpen(true)}>Trigerrr</button>
+      {/* <button onClick={() => setOpen(true)}>Trigerrr</button>
       <VaulDrawer
         content={
           <p className="text-black">
@@ -96,7 +97,7 @@ export default function Home() {
         title="Test Drawer"
         isOpen={open}
         onClose={() => setOpen(false)}
-      />
+      /> */}
       ------
       <TVaulDrawer />
     </div>
