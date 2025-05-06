@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReactNode } from "react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Drawer } from "vaul";
@@ -25,40 +24,16 @@ const DrawerDemo = ({
 }: DrawerProps) => {
   return (
     <Drawer.Root open={isOpen} onOpenChange={onClose}>
-      <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-60 bg-[rgba(9,9,10,0.75)]" />
       <Drawer.Portal>
+        <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-60 bg-[rgba(9,9,10,0.75)]" />
         <Drawer.Content className="border-gray-60 fixed right-0 bottom-0 left-0 z-70 flex h-fit max-h-[97%] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
-          {/* <BaseDrawer
+          <BaseDrawer
             isOpen={isOpen}
             onClose={onClose}
             title={title}
             content={content}
             nestedDrawer={nestedDrawer}
-          /> */}
-          {/* {content} */}
-          <div className="noScrollbar flex-1 overflow-y-auto h-40 rounded-t-[10px]">
-            {title ? (
-              <Drawer.Title className={titleClassNames}>
-                <button
-                  aria-hidden
-                  className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
-                  onClick={onClose}
-                />
-                <div className="text-center">{title}</div>
-              </Drawer.Title>
-            ) : (
-              <div className={titleClassNames}>
-                <div
-                  aria-hidden
-                  className="bg-gray-40 mx-auto mt-2 mb-2 h-1.5 w-12 flex-shrink-0 rounded-full"
-                />
-                <VisuallyHidden asChild>
-                  <Drawer.Title>{title}</Drawer.Title>
-                </VisuallyHidden>
-              </div>
-            )}
-            <div className="relative mt-10 p-2">{content}</div>
-          </div>
+          />
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
