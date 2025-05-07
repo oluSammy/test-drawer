@@ -66,7 +66,7 @@ const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
             </VisuallyHidden>
           </div>
         )}
-        <div className="relative mt-10 p-2">{content}</div>
+        <div className="relative mt-10 p-2 z-70">{content}</div>
       </div>
 
       {/* {nestedDrawer?.map((nested) => (
