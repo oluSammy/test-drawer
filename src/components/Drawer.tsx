@@ -44,7 +44,7 @@ const DrawerDemo = ({
 
 const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
   return (
-    <div className="z-70">
+    <div className="z-70 max-h-[95%]">
       <div className="noScrollbar flex-1 z-70 overflow-y-auto rounded-t-[10px]">
         {title ? (
           <Drawer.Title className={titleClassNames}>
