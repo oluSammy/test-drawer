@@ -28,14 +28,15 @@ const DrawerDemo = ({
     <Drawer.Root open={isOpen} onOpenChange={onClose}>
       <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-40 bg-[rgba(9,9,10,0.75)]" />
       <Drawer.Portal>
-        <Drawer.Content className="bg-gray-100 h-[97vh] z-70 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
-          <BaseDrawer
+        <Drawer.Content className="border-b-gray-60 flex flex-col z-40 items-center text-gray-10 fixed px-2 top-0 border-b-[0.5px] w-full bg-gray-100 pt-1 rounded-t-lg pb-1 text-base font-medium mb-4">
+          {/* <BaseDrawer
             isOpen={isOpen}
             onClose={onClose}
             title={title}
             content={content}
             nestedDrawer={nestedDrawer}
-          />
+          /> */}
+          {content}
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
