@@ -29,14 +29,13 @@ const DrawerDemo = ({
       <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-40 bg-[rgba(9,9,10,0.75)]" />
       <Drawer.Portal>
         <Drawer.Content className="border-b-gray-60 flex flex-col z-40 items-center text-gray-10 fixed px-2 top-0 border-b-[0.5px] w-full bg-gray-100 pt-1 rounded-t-lg pb-1 text-base font-medium mb-4">
-          {/* <BaseDrawer
+          <BaseDrawer
             isOpen={isOpen}
             onClose={onClose}
             title={title}
             content={content}
             nestedDrawer={nestedDrawer}
-          /> */}
-          {content}
+          />
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
@@ -46,7 +45,8 @@ const DrawerDemo = ({
 const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
   return (
     <div className="z-70">
-      <div className="noScrollbar flex-1 z-70 overflow-y-auto rounded-t-[10px]">
+      {content}
+      {/* <div className="noScrollbar flex-1 z-70 overflow-y-auto rounded-t-[10px]">
         {title ? (
           <Drawer.Title className={titleClassNames}>
             <button
@@ -68,7 +68,7 @@ const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
           </div>
         )}
         <div className="relative mt-10 p-2 z-70">{content}</div>
-      </div>
+      </div> */}
 
       {/* {nestedDrawer?.map((nested) => (
         <Drawer.NestedRoot
