@@ -45,9 +45,9 @@ const DrawerDemo = ({
 const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
   return (
     <div className="z-70">
-      {content}
-      {/* <div className="noScrollbar flex-1 z-70 overflow-y-auto rounded-t-[10px]">
-        {title ? (
+      <div className="noScrollbar flex-1 z-70 overflow-y-auto rounded-t-[10px]">
+        {content}
+        {/* {title ? (
           <Drawer.Title className={titleClassNames}>
             <button
               aria-hidden
@@ -67,8 +67,8 @@ const BaseDrawer = ({ title, content, nestedDrawer, onClose }: DrawerProps) => {
             </VisuallyHidden>
           </div>
         )}
-        <div className="relative mt-10 p-2 z-70">{content}</div>
-      </div> */}
+        <div className="relative mt-10 p-2 z-70">{content}</div> */}
+      </div>
 
       {/* {nestedDrawer?.map((nested) => (
         <Drawer.NestedRoot
