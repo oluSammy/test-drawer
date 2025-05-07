@@ -100,6 +100,7 @@ export default function Home() {
       />
       ------
       {/* <TVaulDrawer /> */}
+      <button onClick={() => setOpen(true)}>Trigerrr new...</button>
       <NewDrawer
         content={
           <p className="text-black">
