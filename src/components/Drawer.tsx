@@ -25,8 +25,8 @@ const DrawerDemo = ({
 }: DrawerProps) => {
   return (
     <Drawer.Root open={isOpen} onOpenChange={onClose}>
+      <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-40 bg-[rgba(9,9,10,0.75)]" />
       <Drawer.Portal>
-        <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-60 bg-[rgba(9,9,10,0.75)]" />
         <Drawer.Content className="bg-gray-100 h-[97vh] z-70 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
           <BaseDrawer
             isOpen={isOpen}
