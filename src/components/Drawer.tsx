@@ -29,13 +29,14 @@ const DrawerDemo = ({
       <Drawer.Overlay className="animate-overlayShow fixed inset-0 z-60 bg-[rgba(9,9,10,0.75)]" />
       <Drawer.Portal>
         <Drawer.Content className="border-gray-60 fixed right-0 bottom-0 left-0 z-70 flex h-fit max-h-[97dvh] flex-col rounded-t-lg border-[0.5px] bg-gray-100 shadow-[0px_10px_38px_-10px_hsla(206,22%,7%,0.35),0px_10px_20px_-15px_hsla(206,22%,7%,0.2)] outline-none">
-          <BaseDrawer
+          {content}
+          {/* <BaseDrawer
             isOpen={isOpen}
             onClose={onClose}
             title={title}
             content={content}
             nestedDrawer={nestedDrawer}
-          />
+          /> */}
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
